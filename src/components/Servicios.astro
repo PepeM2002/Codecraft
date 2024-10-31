@@ -1,0 +1,55 @@
+---
+import Card from "./Card.astro";
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="bg-[#05132b] w-full">
+  <div class="flex flex-col items-center mt-10 pt-10">
+    <h1 class="text-6xl font-bold text-center mb-4 z-40">
+      {title}
+    </h1>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-10 p-10">
+    <!-- quedan pendiente el diseño de la imagen -->
+    <Card
+      title="Desarrollo Web"
+      body="Diseño, desarrollo y mantenimiento de sitios web y aplicaciones web."
+      href="https://www.codecraft.io/web"
+      imgSrc=""
+    />
+    <Card
+      title="Desarrollo Mobile"
+      body="Diseño, desarrollo y mantenimiento de aplicaciones móviles."
+      href="mobile.png"
+      imgSrc=""
+    />
+    <Card
+      title="Desarrollo Backend"
+      body="Desarrollo y mantenimiento de APIs y sistemas de backend."
+      href="backend.png"
+      imgSrc=""
+    />
+    <Card
+      title="Desarrollo Frontend"
+      body="Diseño, desarrollo y mantenimiento de interfaces de usuario."
+      href="frontend.png"
+      imgSrc=""
+    />
+    <Card
+      title="Ecommerce"
+      body="Diseño, desarrollo y mantenimiento de e-commerce."
+      href="ecommerce.png"
+      imgSrc=""
+    />
+    <Card
+      title="Hosting y Registro de Dominios"
+      body="Hosting y registro de dominios para sitios web y aplicaciones."
+      href="hosting.png"
+      imgSrc=""
+    />
+  </div>
+</div>
