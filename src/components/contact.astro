@@ -1,0 +1,89 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="contenedorformulario">
+  <h1 class="text-2xl font-bold text-center mb-4">
+    <span class="text-blue-500"> {title} </span>
+  </h1>
+
+  <form action="https://formsubmit.co/yahir634gallo@gmail.com" method="POST">
+    <div class="datoscontact">
+      <label class="description" for="nombre">Nombre de la empresa o cliente</label>
+      <input class="contenedorinfo" id="nombre" name="nombre" type="text" required />
+    </div>
+    <div class="datoscontact">
+      <label class="description" for="email">Correo electrónico</label>
+      <input class="contenedorinfo" id="email" name="email" type="email" required />
+    </div>
+    <div class="datoscontact">
+      <label class="description" for="telefono">Teléfono</label>
+      <input class="contenedorinfo" id="number" name="number" type="text"  />
+    </div>
+    <div class="datoscontact">
+      <label class="description" for="servicio">Tipo de servicio</label>
+      <select class="contenedorinfo" name="servicio" id="servicio" required>
+        <option value="" disabled selected>Seleccione un servicio</option>
+        <option value="desarrollo_web">Desarrollo WEB</option>
+        <option value="diseno_web">Diseño WEB</option>
+        <option value="mantenimiento">Mantenimiento</option>
+        <option value="desarrollo_frontend">Desarrollo Frontend</option>
+        <option value="desarrollo_backend">Desarrollo Backend</option>
+        <option value="despliegues">Despliegues</option>
+      </select>
+    </div>
+    <div class="datoscontact">
+      <label class="description" for="descripcion">Descripción breve del proyecto</label>
+      <input class="contenedorinfo" id="descripcion" name="descripcion" type="text" required />
+    </div>
+    <div class="datoscontact">
+      <label class="description" for="url">URL del sitio web (si aplica)</label>
+      <input class="contenedorinfo" id="url" name="url" type="text" />
+    </div>
+    <div class="datoscontact">
+      <label class="description" for="plazo">Plazo de entrega estimado</label>
+      <input class="contenedorinfo" id="plazo" name="plazo" type="text" required />
+    </div>
+    <button
+      class="bg-blue-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-blue-600 transition duration-300"
+      type="submit"
+    >
+      ENVIAR
+    </button>
+  </form>
+  
+</div>
+
+<style>
+  .datoscontact {
+    margin-bottom: 1rem;
+    justify-content: center;
+    display: block;
+  }
+  .description {
+    display: block;
+    margin: 10px;
+  }
+  .tituloform {
+    color: blue;
+  }
+  .contenedorformulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem; /* Añade algo de espacio interno */
+    border: 2px solid rgb(255, 255, 255); /* Borde blanco */
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.6); /* Sombra blanca */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    height: auto; /* Ajuste dinámico de la altura */
+  }
+  .contenedorinfo {
+    color: black;
+  }
+</style>
