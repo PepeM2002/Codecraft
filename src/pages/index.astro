@@ -5,10 +5,66 @@ import Header from "../components/header.astro";
 import Info from "../components/info.astro";
 import Services from "../components/Servicios.astro";
 import Contact from "../components/contact.astro";
+import Tecnologys from "../components/tecnologys.astro";
+
+const tarjetas = [
+  {
+    name: "React",
+    src: "react.png",
+  },
+  {
+    name: "Angular",
+    src: "angular.png",
+  },
+  {
+    name: "Astro",
+    src: "favicon.svg",
+  },
+  {
+    name: "Tailwind.png",
+    src: "Tailwind.png",
+  },
+  {
+    name: "JavaScript",
+    src: "JS.png",
+  },
+  {
+    name: "PHP",
+    src: "php.svg",
+  },
+  {
+    name: "SQL",
+    src: "servidor-sql.png",
+  },
+  {
+    name: "CSS",
+    src: "css.png",
+  },
+
+  {
+    name: "HTML",
+    src: "html.png",
+  },
+  {
+    name: "BOOTSTRAP",
+    src: "bootstrap-logo.svg",
+  },
+];
 ---
 
 <Layout title="Welcome to Astro." />
 <Header logo="CODECRAFT" title="Codecraft" />
 <Info title="Hola, " />
 <Services title="Servicios" />
+<h1 class="text-6xl font-bold text-center mb-4 z-40">Tecnologys</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-5 gap-10 p-6">
+  {
+    tarjetas.map((card) => (
+      <div class="transition-transform transform hover:scale-105">
+        <Tecnologys tecnologia={card.name} imagen={card.src} />
+      </div>
+    ))
+  }
+</div>
 <Contact title="Describe tu situacion" />

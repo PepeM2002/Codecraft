@@ -5,27 +5,29 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<div class="contenedorformulario">
-  <h1 class="text-2xl font-bold text-center mb-4">
+<div class="bg-[#05132b] w-3/5 p-[10px] mx-auto">
+  <h1 class="text-6xl font-bold text-center mb-4 z-40">
     <span class="text-blue-500"> {title} </span>
   </h1>
 
   <form action="https://formsubmit.co/yahir634gallo@gmail.com" method="POST">
     <div class="datoscontact">
-      <label class="description" for="nombre">Nombre de la empresa o cliente</label>
-      <input class="contenedorinfo" id="nombre" name="nombre" type="text" required />
+      <label class="description" for="nombre"
+        >Nombre de la empresa o cliente</label
+      >
+      <input class="contenedorinfo" id="nombre" name="nombre" type="text" />
     </div>
     <div class="datoscontact">
       <label class="description" for="email">Correo electrónico</label>
-      <input class="contenedorinfo" id="email" name="email" type="email" required />
+      <input class="contenedorinfo" id="email" name="email" type="email" />
     </div>
     <div class="datoscontact">
       <label class="description" for="telefono">Teléfono</label>
-      <input class="contenedorinfo" id="number" name="number" type="text"  />
+      <input class="contenedorinfo" id="number" name="number" type="tel" />
     </div>
     <div class="datoscontact">
       <label class="description" for="servicio">Tipo de servicio</label>
-      <select class="contenedorinfo" name="servicio" id="servicio" required>
+      <select class="contenedorinfo" name="servicio" id="servicio">
         <option value="" disabled selected>Seleccione un servicio</option>
         <option value="desarrollo_web">Desarrollo WEB</option>
         <option value="diseno_web">Diseño WEB</option>
@@ -36,17 +38,18 @@ const { title } = Astro.props;
       </select>
     </div>
     <div class="datoscontact">
-      <label class="description" for="descripcion">Descripción breve del proyecto</label>
-      <input class="contenedorinfo" id="descripcion" name="descripcion" type="text" required />
+      <label class="description" for="descripcion"
+        >Descripción breve del proyecto</label
+      >
+      <textarea class="contenedorinfo" id="descripcion" name="descripcion"
+      ></textarea>
     </div>
-    <div class="datoscontact">
-      <label class="description" for="url">URL del sitio web (si aplica)</label>
-      <input class="contenedorinfo" id="url" name="url" type="text" />
-    </div>
-    <div class="datoscontact">
-      <label class="description" for="plazo">Plazo de entrega estimado</label>
-      <input class="contenedorinfo" id="plazo" name="plazo" type="text" required />
-    </div>
+    <br>
+    
+
+    <input type="hidden" name="_next" value="http://localhost:4321/" />
+    <input type="hidden" name="_captcha" value="false" />
+
     <button
       class="bg-blue-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-blue-600 transition duration-300"
       type="submit"
@@ -54,29 +57,24 @@ const { title } = Astro.props;
       ENVIAR
     </button>
   </form>
-  
 </div>
 
 <style>
-  .datoscontact {
-    margin-bottom: 1rem;
-    justify-content: center;
-    display: block;
-  }
+ 
   .description {
     display: block;
     margin: 10px;
+    justify-content: left;
+    text-align: left;
   }
-  .tituloform {
-    color: blue;
-  }
+ 
   .contenedorformulario {
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem; /* Añade algo de espacio interno */
+    padding: 10px; /* Añade algo de espacio interno */
     border: 2px solid rgb(255, 255, 255); /* Borde blanco */
     box-shadow: 0 8px 30px rgba(255, 255, 255, 0.6); /* Sombra blanca */
     max-width: 600px; /* Ancho máximo del contenedor */
@@ -85,5 +83,7 @@ const { title } = Astro.props;
   }
   .contenedorinfo {
     color: black;
+    width: 100%;
+    border-radius: 10px;
   }
 </style>

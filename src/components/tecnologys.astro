@@ -1,0 +1,15 @@
+---
+interface Props {
+  tecnologia: string;
+  imagen: string;
+}
+
+const { tecnologia, imagen } = Astro.props;
+---
+
+<div class="max-w-xs mx-auto shadow-lg rounded-lg overflow-hidden bg-gray-800">
+  <div class="flex justify-center p-4">
+    <img class="w-auto h-48 object-contain" src={imagen} alt={tecnologia} />
+  </div>
+  <p class="text-center text-xl text-white font-semibold p-4">{tecnologia}</p>
+</div>
