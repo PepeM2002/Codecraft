@@ -7,9 +7,12 @@ interface Props {
 const { tecnologia, imagen } = Astro.props;
 ---
 
-<div class="max-w-xs mx-auto shadow-lg rounded-lg overflow-hidden bg-gray-800">
+<div class="max-w-xs mx-auto bg-black rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-3">
   <div class="flex justify-center p-4">
-    <img class="w-auto h-48 object-contain" src={imagen} alt={tecnologia} />
+    <img class="w-auto h-48 object-contain rounded-t-lg" src={imagen} alt={tecnologia} />
   </div>
-  <p class="text-center text-xl text-white font-semibold p-4">{tecnologia}</p>
+  <p class="text-center text-xl text-white font-semibold p-4">
+    {tecnologia}
+  </p>
 </div>
+

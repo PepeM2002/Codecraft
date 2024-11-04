@@ -5,29 +5,68 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<div class="bg-[#05132b] w-3/5 p-[10px] mx-auto">
-  <h1 class="text-6xl font-bold text-center mb-4 z-40">
-    <span class="text-blue-500"> {title} </span>
+<div class="bg-[#05132b] w-full md:w-3/5 p-8 mx-auto rounded-lg shadow-lg">
+  <h1 class="text-4xl md:text-6xl font-bold text-center mb-8 text-white">
+    <span> {title} </span>
   </h1>
 
-  <form action="https://formsubmit.co/yahir634gallo@gmail.com" method="POST">
+  <form
+    action="https://formsubmit.co/yahir634gallo@gmail.com"
+    method="POST"
+    class="space-y-6"
+  >
     <div class="datoscontact">
-      <label class="description" for="nombre"
+      <label class="block text-gray-300 font-medium mb-2" for="nombre"
         >Nombre de la empresa o cliente</label
       >
-      <input class="contenedorinfo" id="nombre" name="nombre" type="text" />
+      <input
+        class="contenedorinfo w-full p-3 border border-gray-600 rounded-md bg-[#0a1d3a] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        id="nombre"
+        name="nombre"
+        type="text"
+        placeholder="Ingresa el nombre"
+        required
+      />
     </div>
+
     <div class="datoscontact">
-      <label class="description" for="email">Correo electrónico</label>
-      <input class="contenedorinfo" id="email" name="email" type="email" />
+      <label class="block text-gray-300 font-medium mb-2" for="email"
+        >Correo electrónico</label
+      >
+      <input
+        class="contenedorinfo w-full p-3 border border-gray-600 rounded-md bg-[#0a1d3a] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Ingresa tu correo"
+        required
+      />
     </div>
+
     <div class="datoscontact">
-      <label class="description" for="telefono">Teléfono</label>
-      <input class="contenedorinfo" id="number" name="number" type="tel" />
+      <label class="block text-gray-300 font-medium mb-2" for="telefono"
+        >Teléfono</label
+      >
+      <input
+        class="contenedorinfo w-full p-3 border border-gray-600 rounded-md bg-[#0a1d3a] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        id="telefono"
+        name="telefono"
+        type="tel"
+        placeholder="Ingresa tu número"
+        required
+      />
     </div>
+
     <div class="datoscontact">
-      <label class="description" for="servicio">Tipo de servicio</label>
-      <select class="contenedorinfo" name="servicio" id="servicio">
+      <label class="block text-gray-300 font-medium mb-2" for="servicio"
+        >Tipo de servicio</label
+      >
+      <select
+        class="contenedorinfo w-full p-3 border border-gray-600 rounded-md bg-[#0a1d3a] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        name="servicio"
+        id="servicio"
+        required
+      >
         <option value="" disabled selected>Seleccione un servicio</option>
         <option value="desarrollo_web">Desarrollo WEB</option>
         <option value="diseno_web">Diseño WEB</option>
@@ -37,21 +76,25 @@ const { title } = Astro.props;
         <option value="despliegues">Despliegues</option>
       </select>
     </div>
+
     <div class="datoscontact">
-      <label class="description" for="descripcion"
+      <label class="block text-gray-300 font-medium mb-2" for="descripcion"
         >Descripción breve del proyecto</label
       >
-      <textarea class="contenedorinfo" id="descripcion" name="descripcion"
-      ></textarea>
+      <textarea
+        class="contenedorinfo w-full p-3 border border-gray-600 rounded-md bg-[#0a1d3a] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        id="descripcion"
+        name="descripcion"
+        rows="4"
+        placeholder="Describe brevemente tu proyecto"
+        required></textarea>
     </div>
-    <br>
-    
 
     <input type="hidden" name="_next" value="http://localhost:4321/" />
     <input type="hidden" name="_captcha" value="false" />
 
     <button
-      class="bg-blue-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-blue-600 transition duration-300"
+      class="w-full bg-blue-500 text-white font-semibold py-3 px-4 rounded-md shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       type="submit"
     >
       ENVIAR
@@ -60,14 +103,13 @@ const { title } = Astro.props;
 </div>
 
 <style>
- 
   .description {
     display: block;
     margin: 10px;
     justify-content: left;
     text-align: left;
   }
- 
+
   .contenedorformulario {
     display: block;
     flex-direction: column;
