@@ -6,30 +6,36 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<div class="flex">
-  <div class="relative w-3/5 flex flex-col items-center">
-    <div class="top-40 absolute left-20">
-      <h1 class="text-4xl font-bold text-center mb-4">
-        {title}
-        <span class="text-blue-500">somos Codecraft</span>
-      </h1>
-      <p class="text-lg">
-        <span class="text-blue-500">
-          CodeCraft es una agencia especializada en la creación de soluciones
-          tecnológicas innovadoras para empresas de todos los tamaños.</span
-        >
-        Con un enfoque en el desarrollo web y aplicaciones móviles, combinamos creatividad
-        y precisión técnica para construir plataformas personalizadas que impulsan
-        el crecimiento de nuestros clientes. Nuestro equipo de expertos en diseño,
-        desarrollo y experiencia de usuario trabaja de la mano con cada cliente para
-        transformar sus ideas en productos digitales de alto rendimiento.
-      </p>
-    </div>
+<div
+  class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 p-6"
+>
+  <div
+    class="lg:w-3/5 w-full flex flex-col items-center lg:items-start text-left lg:text-left lg:p-10"
+  >
+    <h1 class="text-3xl lg:text-4xl font-bold mb-4">
+      {title}
+      <span class="text-blue-500"> somos Codecraft</span>
+    </h1>
+    <p class="text-base lg:text-lg leading-relaxed">
+      <span class="text-blue-500">
+        CodeCraft es una agencia especializada en la creación de soluciones
+        tecnológicas innovadoras para empresas de todos los tamaños.
+      </span>
+      Con un enfoque en el desarrollo web y aplicaciones móviles, combinamos creatividad
+      y precisión técnica para construir plataformas personalizadas que impulsan
+      el crecimiento de nuestros clientes. Nuestro equipo de expertos en diseño,
+      desarrollo y experiencia de usuario trabaja de la mano con cada cliente para
+      transformar sus ideas en productos digitales de alto rendimiento.
+    </p>
   </div>
-  <div class="justify-end flex p-6 w-2/5 rounded-lg">
+
+  <div
+    class="flex justify-center lg:justify-center w-full lg:w-2/5 mt-6 lg:mt-0"
+  >
     <img
       src="/codecraft.jpg"
-      class="floating justify-end rounded-full w-4/5 shadow-blue-950 shadow-xl"
+      class="floating rounded-full w-4/5 lg:w-80 shadow-blue-950 shadow-xl"
+      alt="Codecraft"
     />
   </div>
 </div>
