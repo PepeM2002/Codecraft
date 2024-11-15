@@ -6,7 +6,8 @@ import Info from "../components/info.astro";
 import Services from "../components/Servicios.astro";
 import Contact from "../components/contact.astro";
 import Tecnologys from "../components/tecnologys.astro";
-
+import SpeedInsights from "@vercel/speed-insights/astro";
+import Portfolio from "../components/portafoliogrid.astro";
 const tarjetas = [
   {
     name: "React",
@@ -52,14 +53,16 @@ const tarjetas = [
 ];
 ---
 
+<SpeedInsights />
 <Layout title="Welcome to Astro." />
 <Header logo="CODECRAFT" title="Codecraft" />
 <Info title="Hola, " />
 <Services title="Servicios" />
-<div class="flex flex-col items-center mt-10 pt-10">
-  <h1 class="text-6xl font-bold text-center mb-4 z-40">Tecnologys</h1>
-</div>
 
+<Portfolio title="Portafolio de proyectos" />
+<div class="flex flex-col items-center mt-10 pt-10">
+  <h1 class="text-6xl font-bold text-center mb-4 z-40">Tecnologies</h1>
+</div>
 <div class="grid grid-cols-1 md:grid-cols-5 gap-10 p-6">
   {
     tarjetas.map((card) => (

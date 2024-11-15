@@ -1,0 +1,58 @@
+---
+import Portfolio from "./portfolio.astro";
+import { getI18N } from "../i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<section
+  class={`
+    w-full max-w-[1400px]
+    grid lg:grid-cols-10 auto-rows-[30rem] gap-4
+    mx-auto p-6 md:p-12 lg:p-20
+  `}
+>
+  <Portfolio title={i18n.Title} class="col-span-10 lg:col-span-6">
+    <div
+      slot="image"
+      class="background transition-scale absolute bottom-0 left-0 top-0
+    -z-10 h-full w-full bg-blue-700
+bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+    >
+    </div>
+    <p slot="content" set:html={i18n.Description} />
+  </Portfolio>
+
+  <Portfolio title={i18n.Title} class="col-span-10 lg:col-span-4">
+    <div
+      slot="image"
+      class="background transition-scale absolute bottom-0 left-0 top-0
+    -z-10 h-full w-full bg-blue-700
+bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+    >
+    </div>
+    <p slot="content" set:html={i18n.Description} />
+  </Portfolio>
+
+  <Portfolio title={i18n.Title} class="col-span-10 lg:col-span-4">
+    <div
+      slot="image"
+      class="background transition-scale absolute bottom-0 left-0 top-0
+   -z-10 h-full w-full bg-blue-700
+bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+    >
+    </div>
+    <p slot="content" set:html={i18n.Description} />
+  </Portfolio>
+  <Portfolio title={i18n.Title} class="col-span-10 lg:col-span-6">
+    <div
+      slot="image"
+      class="background transition-scale absolute bottom-0 left-0 top-0
+    -z-10 h-full w-full bg-blue-700
+bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+    >
+    </div>
+    <p slot="content" set:html={i18n.Description} />
+  </Portfolio>
+</section>
